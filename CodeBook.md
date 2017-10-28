@@ -94,7 +94,8 @@ The list of variable names containing "mean" and "std" is as follows:
 62 fBodyBodyAccJerkMag-std()
 63 fBodyBodyGyroMag-mean()
 64 fBodyBodyGyroMag-std()
-65 fBodyBodyGyroJerkMag-mean() 66 fBodyBodyGyroJerkMag-std()
+65 fBodyBodyGyroJerkMag-mean()
+66 fBodyBodyGyroJerkMag-std()
 
 3- Setting descriptive activity names to name the activities in the data set:
 -----------------------------------------------------------------------------
@@ -185,7 +186,8 @@ Final variable names of the result table are as follows:
 61 frequencyBodyGyroscope-std()-Z
 62 frequencyBodyAccelerometerMagnitude-mean()
 63 frequencyBodyAccelerometerMagnitude-std()
-64 frequencyBodyAccelerometerJerkMagnitude-mean() 65 frequencyBodyAccelerometerJerkMagnitude-std()
+64 frequencyBodyAccelerometerJerkMagnitude-mean()
+65 frequencyBodyAccelerometerJerkMagnitude-std()
 66 frequencyBodyGyroscopeMagnitude-mean()
 67 frequencyBodyGyroscopeMagnitude-std()
 68 frequencyBodyGyroscopeJerkMagnitude-mean()
