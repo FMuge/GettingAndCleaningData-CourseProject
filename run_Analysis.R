@@ -1,13 +1,13 @@
 run_analysis <- function () {
 
     ##load required libraries
-    library(dplyr) # for fancy data table manipulations and organization
+    library(dplyr)      # flexible grammar of data manipulation
     
     ##download and unzip the data
     if(!file.exists("./UCI HAR Dataset")) {
         fileURL<-"http://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
-        download.file(fileURL,"CourseProject")
-        dataDir<-unz(description = "Course Project", filename="CourseProject")
+        download.file(fileURL,"./CourseProject.zip")
+        unzip(zipfile = "CourseProject.zip")
             }
     ##read master files
     activity_labels<-read.table( "./UCI HAR Dataset/activity_labels.txt",sep=" ",header=FALSE)
@@ -33,9 +33,8 @@ run_analysis <- function () {
     names(activity)<- c("activity")
     names(data)<- features$V2
     
-    all_data<-cbind(subject,activity)
-    all_data<-cbind(all_data,data)
-    
+    all_data<-cbind(subject,activity, data)
+
     ## 2- Extracting only the measurements on the mean and standard deviation for each measurement. 
     selectedfeatures<-features$V2[grep("mean\\(\\)|std\\(\\)", features$V2)]
     selectednames<-c("subject", "activity",as.character(selectedfeatures))
@@ -56,7 +55,7 @@ run_analysis <- function () {
     ## 5- Tidy data set with the average of each variable for each activity and each subject
     rs<-aggregate(. ~subject + activity + activity_name, merged_data, mean, na.rm=TRUE)
     rs<-arrange(rs,subject,activity)
-    write.table(rs, file = "./UCI HAR Dataset/tidydata.txt",row.name=FALSE)
+    write.table(rs, file = "./GettingAndCleaningData-CourseProject/tidydata.txt",row.name=FALSE)
  
     ##clean variables
     rm(list = ls(all=TRUE))  
