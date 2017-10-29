@@ -130,6 +130,9 @@ BodyBody: Body
  
 Final variable names of the result table are as follows:
 
+
+No | Variable Name
+---| -------------------
  1 | `subject`                                          
  2 | `activity`                                       
  3 | `activity_name`                                    
